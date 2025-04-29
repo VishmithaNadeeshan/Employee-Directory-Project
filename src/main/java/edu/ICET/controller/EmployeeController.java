@@ -21,6 +21,10 @@ public class EmployeeController {
     public void updateEmployee(@RequestBody Employee employee){
         service.updateEmployee(employee);
     }
+    @GetMapping("/searchById/{id}")
+    public Employee searchEmployee(@PathVariable Integer id){
+       return service.searchEmployee(id);
+    }
     @DeleteMapping("/deleteById/{id}")
     public void deleteEmployee(@PathVariable Integer id){
         service.deleteEmployee(id);
